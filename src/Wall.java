@@ -6,11 +6,11 @@ public class Wall extends Polygon{
 	
 	private Color color;
 	
-	public Wall(int x, int y) {
+	public Wall(int x, int y, int size) {
 		addPoint(x, y);
-		addPoint(x + 25, y);
-		addPoint(x + 25, y + 25);
-		addPoint(x, y + 25);
+		addPoint(x + size, y);
+		addPoint(x + size, y + size);
+		addPoint(x, y + size);
 		color = Color.BLACK;
 	}
 
