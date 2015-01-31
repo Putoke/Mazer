@@ -34,7 +34,7 @@ public class MainMenu extends JMenuBar{
 		depthFirstMaze.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mazePanel.updateMaze(MazeGenerator.depthFirstMaze(25, 20));
+				mazePanel.updateMaze(MazeGenerator.depthFirstMaze(10, 50));
 			}
 		});
 		

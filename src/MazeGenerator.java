@@ -26,6 +26,7 @@ public class MazeGenerator {
 			positions[x][y][z] = 1;
 			maze.removeWall(x, y, z);
 		}
+		maze.getCell(new Random().nextInt(mazeSize), new Random().nextInt(mazeSize)).setColor(Color.ORANGE);;
 		return maze;
 	}
 	

@@ -17,7 +17,7 @@ public class MainFrame extends JFrame implements KeyEventDispatcher{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		//GUI
-		mazePanel = new MazePanel();
+		mazePanel = new MazePanel(this);
 		mainMenu = new MainMenu(mazePanel);
 		setJMenuBar(mainMenu);		
 		mazePanel.setPreferredSize(new Dimension(501, 501));

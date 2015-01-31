@@ -5,6 +5,7 @@ public class Maze{
 
 	private Cell[][] cells;
 	private Wall[][][] walls;
+	private int mazeSize, cellSize;
 	
 	public Maze(int cellSize, int mazeSize) {
 		cells = new Cell[mazeSize][mazeSize];
@@ -35,6 +36,16 @@ public class Maze{
 					walls[x][y][3] = walls[x][y+1][1] = new Wall(xPos, yPos+cellSize, cellSize, true);
 			}
 		}
+		this.mazeSize = mazeSize;
+		this.cellSize = cellSize;
+	}
+	
+	public int getMazeSize() {
+		return mazeSize;
+	}
+	
+	public int getCellSize() {
+		return cellSize;
 	}
 	
 	public Cell getCell(int x, int y) {
