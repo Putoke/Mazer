@@ -1,25 +1,31 @@
 import java.awt.Color;
-import java.awt.Polygon;
 
 
-public class Wall extends Polygon{
+public class Wall extends MazeObject{
 	
-	private Color color;
-	
-	public Wall(int x, int y, int size) {
+	private boolean removed;
+
+	public Wall(int x, int y, int length, boolean horizontal) {
+		color = Color.WHITE;
 		addPoint(x, y);
-		addPoint(x + size, y);
-		addPoint(x + size, y + size);
-		addPoint(x, y + size);
-		color = Color.BLACK;
-	}
-
-	public Color getColor() {
-		return color;
+		if(horizontal) {
+			addPoint(x+length, y);
+			addPoint(x+length, y+1);
+			addPoint(x, y+1);
+		} else {
+			addPoint(x, y+length);
+			addPoint(x+1, y+length);
+			addPoint(x+1, y);
+		}
+		removed = false;
 	}
 	
-	public void setColor(Color color) {
-		this.color = color;
+	public void remove() {
+		removed = true;
+	}
+	
+	public boolean isRemoved() {
+		return removed;
 	}
 	
 }

@@ -20,7 +20,7 @@ public class MainFrame extends JFrame implements KeyEventDispatcher{
 		mazePanel = new MazePanel();
 		mainMenu = new MainMenu(mazePanel);
 		setJMenuBar(mainMenu);		
-		mazePanel.setPreferredSize(new Dimension(500, 500));
+		mazePanel.setPreferredSize(new Dimension(501, 501));
 		setLayout(new BorderLayout());
 		add(mazePanel);
 		pack();

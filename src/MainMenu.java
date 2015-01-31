@@ -29,9 +29,18 @@ public class MainMenu extends JMenuBar{
 				mazePanel.updateMaze(MazeGenerator.jogolMaze());
 			}
 		});
+		JMenuItem depthFirstMaze = new JMenuItem("Depth First Maze");
+		depthFirstMaze.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
+		depthFirstMaze.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mazePanel.updateMaze(MazeGenerator.depthFirstMaze(25, 20));
+			}
+		});
 		
 		generateMaze.add(justRandom);
 		generateMaze.add(jogolMaze);
+		generateMaze.add(depthFirstMaze);
 		file.add(generateMaze);
 		add(file);
 	}

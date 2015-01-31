@@ -10,21 +10,16 @@ public class MazePanel extends JPanel{
 	private Color mazeColor;
 	
 	public MazePanel() {
-		maze = new Maze();
-		mazeColor = null;
+		maze = new Maze(0, 0);
+		mazeColor = Color.BLACK;//new Color(100, 149, 237);
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		g.setColor(Color.white);
+		g.setColor(mazeColor);
 		g.fillRect(0, 0, getWidth(), getHeight());
-		if(mazeColor != null)
-			g.setColor(mazeColor);
-		for(Wall w : maze) {
-			if(mazeColor == null)
-				g.setColor(w.getColor());
-			g.fillPolygon(w);
-		}
+		maze.printCells(g);
+		maze.printWalls(g);
 	}
 	
 	public void updateMaze(Maze maze) {
